@@ -31,7 +31,7 @@ OpenOCD prebuilt binaries can be downloaded from <https://github.com/xpack-dev-t
 
 ## Current state
 
-- JTAG scan chain and programming of the FPGA works (see the screenshot below)
+- JTAG scan chain and programming of the FPGA works
 - Initialization of the MPSSE is not implemented --> run OpenOCD once to init the device
 
 ### Download time
@@ -48,18 +48,6 @@ speeds for 5SGSMD5 with the bitstream size of 213,798,880 bits (cca 26 MB).
 | 20               | 01:54                 |
 
 
-### Usage example
-
-Result after programming the bitstream:
-
-![Quartus Programmer](docs/current_state_2.png)
-
-## Useful links
-
-  * https://forums.intel.com/s/question/0D50P00003yyL2bSAE/bemicro-and-programming-under-linux ([archive.today link](http://archive.today/1iEwQ))
-  * https://community.intel.com/t5/Programmable-Devices/MAX10-JTAG-Instruction-Set-Understanding-what-USBBlaster-is/td-p/218784 ([archive.today link](http://archive.today/J0Cc2))
-
-
-## To listen do the debug log (with Debug build)
+## View debug log (with Debug build)
 
 Download DebugView (from the SysInternals suite) and capture events.

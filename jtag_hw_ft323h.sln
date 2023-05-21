@@ -7,6 +7,12 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "jtag_hw_ft323h_lib", "jtag_
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "mpsse_test", "mpsse_test\mpsse_test.vcxproj", "{AF274424-DF9B-4995-9B74-28E489E2408B}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B128F86B-D1DD-4735-BBE3-D1A06B43A3BC}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		README.MD = README.MD
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
