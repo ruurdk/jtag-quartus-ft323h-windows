@@ -16,7 +16,9 @@ To install, copy `jtag_hw_ft323h_lib.dll` to your quartus `bin64` directory (eg.
 
 ## Initialization
 
-Before using this driver, run OpenOCD to initialize the FT232H:
+Before using this driver, change the USB drivers from FTDI to WinUSB. This is easily done using the [Zadig tool](https://zadig.akeo.ie/). 
+
+Then run OpenOCD to initialize the FT232H:
 
 ```sh
 openocd \
