@@ -1,0 +1,192 @@
+/*
+ * alt_jtag_enum.h
+ *
+ * Copyright (c) 1991-2016, Altera Corporation.
+ * All rights reserved.
+ * 
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions are met:
+ *     * Redistributions of source code must retain the above copyright
+ *       notice, this list of conditions and the following disclaimer.
+ *     * Redistributions in binary form must reproduce the above copyright
+ *       notice, this list of conditions and the following disclaimer in the
+ *       documentation and/or other materials provided with the distribution.
+ *     * Neither the name of the Altera Corporation nor the
+ *       names of its contributors may be used to endorse or promote products
+ *       derived from this software without specific prior written permission.
+ * 
+ * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
+ * ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+ * WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+ * DISCLAIMED. IN NO EVENT SHALL <COPYRIGHT HOLDER> BE LIABLE FOR ANY
+ * DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+ * (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+ * LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+ * ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+ * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+ */
+#ifndef __ALTERA_JTAG_ENUM_H
+#define __ALTERA_JTAG_ENUM_H
+
+// ATERA JTAG Instruction set
+enum JI_ALTERA {
+	// basic group
+	JI_EXTEST					= 0x000,
+	JI_PULSE_NCONFIG			= 0x001,
+	JI_PROGRAM					= 0x002,
+	JI_STARTUP					= 0x003,
+	JI_STATUS					= 0x004,
+	JI_SAMPLE_PRELOAD 			= 0x005,
+	JI_IDCODE					= 0x006,
+	JI_USERCODE					= 0x007,
+	JI_CLAMP					= 0x00A,
+	JI_HIGHZ					= 0x00B,
+	JI_USER0					= 0x00C,
+	JI_CONFIG_IO 				= 0x00D,
+	JI_USER1					= 0x00E,
+	JI_EXTEST2 					= 0x00F,
+
+	// test group
+	JI_EDERROR_INJECT 			= 0x015,
+	JI_CHANGE_EDREG				= 0x015,
+	JI_SHIFT_EDERROR_REG		= 0x017,
+	JI_EXTEST_TRAIN				= 0x02F,
+	JI_EXTEST_PULSE				= 0x04F,
+
+	// ??
+	JI_FPGA_ISC_ENABLE			= 0x071,
+	JI_FPGA_ISC_DISABLE			= 0x066,
+	JI_FPGA_ISC_ADDRESS_SHIFT	= 0x38E,
+	JI_FPGA_ISC_PROGRAM			= 0x392,
+
+	// AS/AP control
+	JI_EN_ACTIVE_CLK			= 0x1EE,
+	JI_DIS_ACTIVE_CLK			= 0x2EE,
+	JI_ACTIVE_DISENGAGE			= 0x2D0,
+	JI_ACTIVE_ENGAGE			= 0x2B0,
+	JI_APFC_BOOT_ADDR			= 0x270,
+	JI_FACTORY					= 0x241,
+	
+	// security key
+	JI_FUSE_WRITE				= 0x010,	// Stratix II
+	JI_KEY_VERIFY				= 0x013,
+	JI_KEY_CLR_VREG				= 0x029,
+	JI_TEST_DISABLE				= 0x02A,
+	JI_KEY_DISABLE_JTAG			= 0x02A,
+	JI_VOL_KEY_ZERO				= 0x033,
+	JI_KEY_SECURE_OTP			= 0x0E5,
+	JI_VOL_KEY_SECURE			= 0x0E6,
+	JI_VOL_KEY_LOCK				= 0x141,
+	JI_KEY_PROG_VOL				= 0x1AD,
+	JI_LOCK						= 0x1F0,
+	JI_RESET_AES				= 0x282,
+	JI_VOL_KEY_LOCK_EN			= 0x2B9,
+	JI_KEY_PROG_OTP				= 0x310,
+	JI_KEY_PROG_OTP_EN			= 0x317,
+	JI_UNLOCK					= 0x331,	//0x330,
+	JI_IP_RECONFIG				= 0x33D,
+	
+	// ASC 	
+	JI_EPC_IDCODE				= 0x059,
+	JI_EPC_USERCODE				= 0x079,
+	JI_EPC_ISC_ENABLE			= 0x044,
+	JI_EPC_ISC_DISABLE			= 0x04A,
+	JI_EPC_ISC_PROGRAM			= 0x196,
+	JI_EPC_ISC_ERASE			= 0x192,
+	JI_EPC_ISC_ADDRESS_SHIFT	= 0x10E,
+	JI_EPC_ISC_READ_INFO		= 0x042,
+	JI_EPC_ISC_READ				= 0x1A6,
+	JI_EPC_ISC_NOOP				= 0x0FF,
+	JI_EPC_ISC_STAT				= 0x03E,
+	
+	// MAX3000	
+	JI_M3K_SAMPLE				= 0x055,
+	JI_M3K_IDCODE				= 0x059,
+	JI_M3K_USERCODE				= 0x007,
+	JI_M3K_ISC_ENABLE			= 0x332,
+	JI_M3K_ISC_DISABLE			= 0x006,
+	JI_M3K_ISC_PROGRAM			= 0x012,
+	JI_M3K_ISC_ERASE			= 0x00A,
+	JI_M3K_ISC_ADDRESS_SHIFT	= 0x00E,
+	JI_M3K_ISC_READ				= 0x016,
+	JI_M3K_ISC_READ_H			= 0x01A,
+	JI_M3K_ISC_READ_L			= 0x01E,
+	JI_M3K_ISC_NOOP				= 0x0FF,
+	
+	// MAX7000	
+	JI_M7K_SAMPLE				= 0x055,
+	JI_M7K_IDCODE				= 0x059,
+	JI_M7K_USERCODE				= 0x007,
+	JI_M7K_CLAMP				= 0x3C3,
+	JI_M7K_ISC_ENABLE0			= 0x0CE, // MAX7064
+	JI_M7K_ISC_ENABLE1			= 0x332, // MAX7128, M7256, M7512
+	JI_M7K_ISC_DISABLE			= 0x006,
+	JI_M7K_ISC_PROGRAM			= 0x012,
+	JI_M7K_ISC_ERASE			= 0x00A,
+	JI_M7K_ISC_ADDRESS_SHIFT	= 0x00E,
+	JI_M7K_ISC_READ				= 0x016,
+	JI_M7K_ISC_READ_H			= 0x01A,
+	JI_M7K_ISC_READ_L			= 0x01E,
+	JI_M7K_ISC_NOOP0			= 0x0FF, // MAX7064
+	JI_M7K_ISC_NOOP1			= 0x020, // MAX7128, M7256, M7512
+	
+	// MAX II	
+	JI_MII_ISC_ENABLE			= 0x2CC,
+	JI_MII_ISC_DISABLE			= 0x201,
+	JI_MII_ISC_PROGRAM			= 0x2F4,
+	JI_MII_ISC_ERASE			= 0x2F2,
+	JI_MII_ISC_ADDRESS_SHIFT 	= 0x203,
+	JI_MII_ISC_READ				= 0x205,
+	JI_MII_ISC_NOOP				= 0x210,
+	
+	// MAX V	
+	JI_M5_ISC_ENABLE			= 0x2CC,
+	JI_M5_ISC_DISABLE			= 0x201,
+	JI_M5_ISC_PROGRAM			= 0x2F4,
+	JI_M5_ISC_ERASE				= 0x2F2,
+	JI_M5_ISC_ADDRESS_SHIFT		= 0x203,
+	JI_M5_ISC_READ				= 0x205,
+	JI_M5_ISC_NOOP				= 0x210,
+
+	// MAX 10	
+	JI_MAX10_ISC_ENABLE_HIZ		= 0x2CC,
+	JI_MAX10_ISC_ENABLE_CLAMP	= 0x233,
+	JI_MAX10_ISC_DISABLE		= 0x201,
+	JI_MAX10_ISC_PROGRAM		= 0x2F4,
+	JI_MAX10_ISC_NOOP			= 0x210,
+	JI_MAX10_ISC_ADDRESS_SHIFT	= 0x203,
+	JI_MAX10_ISC_ERASE			= 0x2F2,
+	JI_MAX10_ISC_READ			= 0x205,
+	JI_MAX10_BGP_ENABLE			= 0x299,
+	JI_MAX10_BGP_DISABLE		= 0x266,	
+
+	// S10/A10
+	JI_ISC_DSM_VERIFY			= 0x307,	
+	JI_ISC_DSM_ERASE			= 0x3F2,
+	JI_ISC_DSM_PROGRAM			= 0x3F4,
+
+	// private instructions
+	// CUDA
+	JI_CUDA_PRIVATE1			= 0x210,
+	JI_CUDA_PRIVATE2			= 0x240,
+	JI_CUDA_PRIVATE3			= 0x2E0,
+	// HARDCOPY
+	JI_HC_PRIVATE0				= 0x220,
+	JI_HC_PRIVATE1				= 0x226,
+	JI_HC_PRIVATE2				= 0x229,
+	JI_HC_PRIVATE3				= 0x22F,
+	// MAX10
+	JI_MAX10_PRIVATE1			= 0x230,
+	JI_MAX10_PRIVATE2			= 0x231,
+	// Stratix V
+	JI_S5_PRIVATE1				= 0x0C9,
+	JI_S5_PRIVATE2				= 0x313,
+	JI_S5_PRIVATE3				= 0x1E0,
+	JI_S5_PRIVATE4				= 0x3B3,
+
+	JI_BYPASS					= 0x3FF,
+
+};
+
+#endif
